@@ -21,9 +21,7 @@ class Application
           resp.write "#{item}\n"
         end
       else
-        resp.write @@cart.each do |item|
-          resp.write "#{item}\n"
-        end
+        resp.write "Your cart is empty"
     elsif req.path.match(/add/)
       item = req.params["item"].strip
       if !@@items.include?(item)
